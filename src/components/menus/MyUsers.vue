@@ -22,7 +22,7 @@
           <td>{{item.position}}</td>
           <td>
             <!-- prevent阻止链接默认跳转 -->
-            <a href="#" @click.prevent="showDetail">详情</a>
+            <a href="#" @click.prevent="showDetail(item.id)">详情</a>
           </td>
         </tr>
       </tbody>
@@ -45,8 +45,8 @@ export default {
     }
   },
   methods: {
-    showDetail() {
-      this.$router.push('/home/userinfo')
+    showDetail(id) {
+      this.$router.push('/home/userinfo/' + id)
     }
   }
 }
